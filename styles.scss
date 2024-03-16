@@ -159,3 +159,20 @@ footer {
         background-color: #000;
     }
 }
+
+/* 커스텀 커서 스타일링 */
+
+.custom-cursor-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    .fake-cursor {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.4));
+        z-index: 1000;
+    }
+}
