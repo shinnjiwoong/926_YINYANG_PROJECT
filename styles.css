@@ -61,6 +61,7 @@ header .btn {
   padding: 0px 10px;
   border: none;
   font-weight: 500;
+  cursor: grab;
 }
 header .btn.home {
   background-color: #000;
@@ -124,6 +125,7 @@ footer .btn {
   padding: 0px 10px;
   border: none;
   font-weight: 500;
+  cursor: grab;
 }
 footer .btn.link {
   background-color: #000;
@@ -151,6 +153,17 @@ footer .btn.download {
   background-color: #000;
 }
 
+/* 캔버스 스타일링 */
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100vh;
+  background-color: transparent;
+}
+
 /* 커스텀 커서 스타일링 */
 .custom-cursor-wrapper {
   position: fixed;
@@ -158,6 +171,7 @@ footer .btn.download {
   bottom: 0;
   left: 0;
   right: 0;
+  pointer-events: none;
 }
 .custom-cursor-wrapper .fake-cursor {
   position: absolute;
