@@ -1,13 +1,15 @@
+let canvas;
+let ctx;
 let isPainting = false;
 
-window.onload = () => {
-    const canvas = document.querySelector('canvas');
-    let ctx = canvas.getContext('2d');
+window.addEventListener('DOMContentLoaded', () => {
+    canvas = document.querySelector('canvas');
+    ctx = canvas.getContext('2d');
+    ctx.globalCompositeOperation = 'multiply';
 
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
-};
-
+});
 window.addEventListener('mousemove', (event) => {
     moveFakeCursor(event.clientX, event.clientY);
     drawPaint(event);
@@ -36,4 +38,15 @@ function drawPaint(event) {
 
     let fakeX = window.innerWidth - event.offsetX;
     let fakeY = window.innerHeight - event.offsetY;
+
+    if (isPainting == true) {
+        console.log('눌러');
+        ctx.fillStyle = '#ffffff';
+        ctx.beginPath();
+        ctx.ellipse(ogX, ogY, 20, 20, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.ellipse(fakeX, fakeY, 20, 20, Math.PI / 4, 0, 2 * Math.PI);
+        ctx.fill();
+    } else {
+        console.log('떼었다');
+    }
 }

@@ -162,6 +162,7 @@ canvas {
   bottom: 0;
   height: 100vh;
   background-color: transparent;
+  mix-blend-mode: difference;
 }
 
 /* 커스텀 커서 스타일링 */
