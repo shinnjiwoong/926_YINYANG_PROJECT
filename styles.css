@@ -54,20 +54,44 @@ header {
   left: 1rem;
   right: 1rem;
 }
+header #control-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+header #control-wrapper #control-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+header #control-wrapper #control-buttons button {
+  font-size: 1.5rem !important;
+}
+header #control-wrapper #line-width-btn-wrapper {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+header #control-wrapper #line-width-btn-wrapper .btn {
+  width: 40px;
+  height: 40px;
+  line-height: 100%;
+}
 header .btn {
   font-family: "yy Gothic";
   font-size: 2rem;
   border-radius: 50px;
-  padding: 0px 10px;
+  padding: 5px 10px;
   border: none;
   font-weight: 500;
-  cursor: grab;
+  height: fit-content;
+  cursor: grab !important;
 }
 header .btn.home {
   background-color: #000;
   color: #fff;
 }
-header .btn.about {
+header .btn.controls {
   background-color: #fff;
   color: #000;
 }
@@ -122,9 +146,10 @@ footer .btn {
   font-family: "yy Gothic";
   font-size: 2rem;
   border-radius: 50px;
-  padding: 0px 10px;
+  padding: 5px 10px;
   border: none;
   font-weight: 500;
+  height: fit-content;
   cursor: grab;
 }
 footer .btn.link {
@@ -146,11 +171,13 @@ footer .btn.download {
   width: 50%;
   height: 100%;
   background-color: #fff;
+  transition: background-color 0.1s ease-in-out;
 }
 .bg-wrapper .right {
   width: 50%;
   height: 100%;
   background-color: #000;
+  transition: background-color 0.1s ease-in-out;
 }
 
 /* 캔버스 스타일링 */
@@ -163,6 +190,7 @@ canvas {
   height: 100vh;
   background-color: transparent;
   mix-blend-mode: difference;
+  pointer-events: none;
 }
 
 /* 커스텀 커서 스타일링 */

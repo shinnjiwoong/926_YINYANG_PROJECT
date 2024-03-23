@@ -59,19 +59,43 @@ header {
     top: 1rem;
     left: 1rem;
     right: 1rem;
+    #control-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        #control-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            button {
+                font-size: 1.5rem !important;
+            }
+        }
+        #line-width-btn-wrapper {
+            display: flex;
+            justify-content: end;
+            gap: 0.5rem;
+            .btn {
+                width: 40px;
+                height: 40px;
+                line-height: 100%;
+            }
+        }
+    }
     .btn {
         font-family: 'yy Gothic';
         font-size: 2rem;
         border-radius: 50px;
-        padding: 0px 10px;
+        padding: 5px 10px;
         border: none;
         font-weight: 500;
-        cursor: grab;
+        height: fit-content;
+        cursor: grab !important;
         &.home {
             background-color: #000;
             color: #fff;
         }
-        &.about {
+        &.controls {
             background-color: #fff;
             color: #000;
         }
@@ -128,9 +152,10 @@ footer {
         font-family: 'yy Gothic';
         font-size: 2rem;
         border-radius: 50px;
-        padding: 0px 10px;
+        padding: 5px 10px;
         border: none;
         font-weight: 500;
+        height: fit-content;
         cursor: grab;
         &.link {
             background-color: #000;
@@ -153,11 +178,13 @@ footer {
         width: 50%;
         height: 100%;
         background-color: #fff;
+        transition: background-color 0.1s ease-in-out;
     }
     .right {
         width: 50%;
         height: 100%;
         background-color: #000;
+        transition: background-color 0.1s ease-in-out;
     }
 }
 
@@ -172,6 +199,7 @@ canvas {
     height: 100vh;
     background-color: transparent;
     mix-blend-mode: difference;
+    pointer-events: none;
 }
 
 /* 커스텀 커서 스타일링 */
