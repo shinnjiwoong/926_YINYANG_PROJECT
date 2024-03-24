@@ -74,8 +74,12 @@ header #control-wrapper #control-buttons {
   gap: 0.5rem;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
-header #control-wrapper #control-buttons button {
+header #control-wrapper #control-buttons .btn {
   font-size: 1.5rem !important;
+}
+header #control-wrapper #control-buttons .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 header #control-wrapper #line-width-btn-wrapper {
   display: flex;
@@ -83,15 +87,12 @@ header #control-wrapper #line-width-btn-wrapper {
   gap: 0.5rem;
   transform: translateY(-100%);
   transition: transform 0.5s ease-in-out 0.2s;
+  z-index: -1;
 }
 header #control-wrapper #line-width-btn-wrapper .btn {
   width: 40px;
   height: 40px;
   line-height: 100%;
-}
-header #control-wrapper #line-width-btn-wrapper .btn:hover {
-  background-color: #000;
-  color: #fff;
 }
 header .btn {
   font-family: "yy Gothic";
@@ -115,7 +116,7 @@ header .btn.controls {
 
 footer {
   display: flex;
-  justify-content: space-between;
+  justify-content: start;
   position: fixed;
   bottom: 1rem;
   left: 1rem;
@@ -142,7 +143,8 @@ footer .link-btns-wrapper .links .my-link {
   opacity: 0;
   padding: 5px;
   color: #000;
-  background-color: #eeeeee;
+  background-color: #eee;
+  mix-blend-mode: difference;
   text-decoration: none;
   text-align: center;
 }

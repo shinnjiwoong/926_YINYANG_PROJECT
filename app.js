@@ -13,7 +13,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
     changeBGColors();
     changeLineWidth();
-    downloadImg();
+    // downloadImg();
 });
 window.addEventListener('mousemove', (event) => {
     moveFakeCursor(event.clientX, event.clientY);
