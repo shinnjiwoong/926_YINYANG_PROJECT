@@ -63,10 +63,22 @@ header {
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
+        &:hover {
+            #control-buttons {
+                transform: translateY(0%);
+                opacity: 1;
+                #line-width-btn-wrapper {
+                    transform: translateY(0%);
+                }
+            }
+        }
         #control-buttons {
+            opacity: 0;
+            transform: translateY(-150%);
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
+            transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
             button {
                 font-size: 1.5rem !important;
             }
@@ -75,10 +87,17 @@ header {
             display: flex;
             justify-content: end;
             gap: 0.5rem;
+            transform: translateY(-100%);
+            transition: transform 0.5s ease-in-out 0.2s;
             .btn {
                 width: 40px;
                 height: 40px;
                 line-height: 100%;
+
+                &:hover {
+                    background-color: #000;
+                    color: #fff;
+                }
             }
         }
     }
@@ -91,6 +110,7 @@ header {
         font-weight: 500;
         height: fit-content;
         cursor: grab !important;
+        text-decoration: none !important;
         &.home {
             background-color: #000;
             color: #fff;
@@ -127,6 +147,10 @@ footer {
                 transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out 0.2s;
                 opacity: 0;
                 padding: 5px;
+                color: #000;
+                background-color: #eeeeee;
+                text-decoration: none;
+                text-align: center;
                 &:hover {
                     filter: invert(100%);
                 }
@@ -157,6 +181,7 @@ footer {
         font-weight: 500;
         height: fit-content;
         cursor: grab;
+        text-decoration: none;
         &.link {
             background-color: #000;
             color: #fff;
@@ -169,6 +194,12 @@ footer {
 }
 
 /* 배경 스타일링 */
+
+.screenshot-wrapper {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
 
 .bg-wrapper {
     display: flex;

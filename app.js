@@ -12,6 +12,8 @@ window.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
 
     changeBGColors();
+    changeLineWidth();
+    downloadImg();
 });
 window.addEventListener('mousemove', (event) => {
     moveFakeCursor(event.clientX, event.clientY);
@@ -43,14 +45,12 @@ function drawPaint(event, lineWidth) {
     let fakeY = window.innerHeight - event.clientY;
 
     if (isPainting == true) {
-        console.log('눌러');
         ctx.fillStyle = '#ffffff';
         ctx.beginPath();
         ctx.ellipse(ogX, ogY, lineWidth, lineWidth, Math.PI / 4, 0, 2 * Math.PI);
         ctx.ellipse(fakeX, fakeY, lineWidth, lineWidth, Math.PI / 4, 0, 2 * Math.PI);
         ctx.fill();
     } else {
-        console.log('떼었다');
     }
 }
 
@@ -75,4 +75,27 @@ function changeBGColors() {
 function changeLineWidth() {
     const plus = document.querySelector('#plus');
     const minus = document.querySelector('#minus');
+
+    plus.addEventListener('click', () => {
+        lineWidth += 5;
+    });
+
+    minus.addEventListener('click', () => {
+        if (lineWidth > 5) {
+            lineWidth -= 5;
+        }
+    });
+}
+
+async function downloadImg() {
+    const downloadBtn = document.querySelector('.btn.download');
+    const screenshotWrapper = document.querySelector('.screenshot-wrapper');
+    const leftBg = document.querySelector('.left');
+
+    downloadBtn.addEventListener('click', async (event) => {
+        let tempCanvas = await html2canvas(screenshotWrapper);
+        let imgUrl = tempCanvas.toDataURL();
+
+        downloadBtn.href = imgUrl;
+    });
 }

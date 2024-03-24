@@ -4,12 +4,13 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="styles.css" />
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="./app.js"></script>
         <title>Document</title>
     </head>
     <body>
         <header>
-            <button class="btn home">YINYANG</button>
+            <a href="/" class="btn home">YINYANG</a>
             <div id="control-wrapper">
                 <button class="btn controls">CONTROLS</button>
                 <div id="control-buttons">
@@ -21,11 +22,13 @@
                 </div>
             </div>
         </header>
-        <section class="bg-wrapper">
-            <div class="left"></div>
-            <div class="right"></div>
-        </section>
-        <canvas> </canvas>
+        <div class="screenshot-wrapper">
+            <section class="bg-wrapper">
+                <div class="left"></div>
+                <div class="right"></div>
+            </section>
+            <canvas> </canvas>
+        </div>
         <section class="custom-cursor-wrapper">
             <img src="./assets/img/cursor.svg" class="fake-cursor" alt="fake cursor" />
         </section>
@@ -33,11 +36,11 @@
             <div class="link-btns-wrapper">
                 <div class="btn link">FOLLOW</div>
                 <div class="links">
-                    <button href="" class="btn link-926">@926_STUDIO</button>
-                    <button href="" class="btn my-link">@SHINNJIWOONG</button>
+                    <a href="https://www.instagram.com/9to6_studio/" target="_blank" class="btn link-926">@926_STUDIO</a>
+                    <a href="https://www.instagram.com/shinnjiwoong/" target="_blank" class="btn my-link">@SHINNJIWOONG</a>
                 </div>
             </div>
-            <a class="btn download">DOWNLOAD</a>
+            <a class="btn download" download="YINYANG">DOWNLOAD</a>
         </footer>
     </body>
 </html>

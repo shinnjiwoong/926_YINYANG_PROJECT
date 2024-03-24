@@ -59,10 +59,20 @@ header #control-wrapper {
   flex-direction: column;
   gap: 0.5rem;
 }
+header #control-wrapper:hover #control-buttons {
+  transform: translateY(0%);
+  opacity: 1;
+}
+header #control-wrapper:hover #control-buttons #line-width-btn-wrapper {
+  transform: translateY(0%);
+}
 header #control-wrapper #control-buttons {
+  opacity: 0;
+  transform: translateY(-150%);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 header #control-wrapper #control-buttons button {
   font-size: 1.5rem !important;
@@ -71,11 +81,17 @@ header #control-wrapper #line-width-btn-wrapper {
   display: flex;
   justify-content: end;
   gap: 0.5rem;
+  transform: translateY(-100%);
+  transition: transform 0.5s ease-in-out 0.2s;
 }
 header #control-wrapper #line-width-btn-wrapper .btn {
   width: 40px;
   height: 40px;
   line-height: 100%;
+}
+header #control-wrapper #line-width-btn-wrapper .btn:hover {
+  background-color: #000;
+  color: #fff;
 }
 header .btn {
   font-family: "yy Gothic";
@@ -86,6 +102,7 @@ header .btn {
   font-weight: 500;
   height: fit-content;
   cursor: grab !important;
+  text-decoration: none !important;
 }
 header .btn.home {
   background-color: #000;
@@ -124,6 +141,10 @@ footer .link-btns-wrapper .links .my-link {
   transition: opacity 0.3s ease-in-out, transform 0.5s ease-in-out 0.2s;
   opacity: 0;
   padding: 5px;
+  color: #000;
+  background-color: #eeeeee;
+  text-decoration: none;
+  text-align: center;
 }
 footer .link-btns-wrapper .links .link-926:hover,
 footer .link-btns-wrapper .links .my-link:hover {
@@ -151,6 +172,7 @@ footer .btn {
   font-weight: 500;
   height: fit-content;
   cursor: grab;
+  text-decoration: none;
 }
 footer .btn.link {
   background-color: #000;
@@ -162,6 +184,12 @@ footer .btn.download {
 }
 
 /* 배경 스타일링 */
+.screenshot-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .bg-wrapper {
   display: flex;
   width: 100%;
